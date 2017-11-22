@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .hero-img {
+  height: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}

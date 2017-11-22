@@ -5,7 +5,7 @@ export default ({currentUser, logout}) => {
   const display = currentUser ? 
   (
     <div>{currentUser.username}
-    <button onClick={this.logout}>Logout</button>
+    <button onClick={logout}>Logout</button>
     </div>
   ) : 
   (

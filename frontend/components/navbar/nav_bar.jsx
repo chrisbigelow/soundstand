@@ -5,8 +5,9 @@ export default ({currentUser, logout, login}) => {
   const demoUser = {username: "testUser", password: "password"}
   const display = currentUser ? 
   (
-    <div>{currentUser.username}
-    <button onClick={() => logout()}>Logout</button>
+    <div>
+    <p className="username">{currentUser.username}</p>
+    <button className="session-bttn-demo session-button" onClick={() => logout()}>Logout</button>
     </div>
   ) : 
   (

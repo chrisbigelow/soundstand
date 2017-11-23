@@ -27,7 +27,7 @@ class Signup extends React.Component {
   render () {
     return (
       <div className="session-form">
-        <h2>Sign up and start listening</h2>
+        <h2>Sign up and start listening today.</h2>
         <form>
           <label className="form-label">username
             <input 
@@ -37,7 +37,7 @@ class Signup extends React.Component {
             />
           </label>
           <label className="form-label">password
-            <input 
+            <input
               type="password"
               value={this.state.password}
               onChange={this.handleInput("password")}

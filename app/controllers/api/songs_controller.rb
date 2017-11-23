@@ -13,8 +13,8 @@ class Api::SongsController < ApplicationController
     @song = Song.find_by(params[:id])
     if @song && @song.update_attributes(song_params)
       render :show
-    elseif !@song
-      render json: ["Coudn't locate track"], status 400
+    elsif !@song
+      render json: ["Coudn't locate track"], status: 400
     else
       render json: @song.errors.full_messages, status: 401
     end
@@ -32,16 +32,16 @@ class Api::SongsController < ApplicationController
     @song = Song.find_by(params[:id])
     if @song
       @song.destroy
-      render :index
+      render :show
     else
-      render json: ["Coudn't locate track"]
+      render json: ["Couldn't locate track"]
     end
   end
 
 private
 
 def song_params
-  params.require(:song).permit(:title, :description)
+  params.require(:song).permit(:title, :description, :user_id)
 end
 
 

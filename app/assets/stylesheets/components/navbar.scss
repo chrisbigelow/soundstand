@@ -1,0 +1,68 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  font: 100 14px/1.5;
+  font-family: 'Catamaran', sans-serif;
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: rgb(224, 67, 5);
+  height: 46px;
+  transition: height .2s ease-in-out;
+}
+
+.logo-img {
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  left: 19px;
+}
+
+.logo {
+  display: flex;
+  position: absolute;
+  left: 73px;
+  top: 18px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: unset;
+  color: white;
+}
+
+.session-buttons {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  margin-right: 8px;
+  margin-top: -7px;
+}
+
+.session-button{
+  height: 30px;
+  padding: 0 16px;
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.session-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.session-bttn-log {
+  margin-right: 6px;
+}
+
+
+
+

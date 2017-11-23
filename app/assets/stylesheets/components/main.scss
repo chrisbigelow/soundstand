@@ -1,0 +1,37 @@
+.navbar {
+  background: #333;
+}
+
+.hero-img {
+  height: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+}
+
+ .splash-title-box {
+  top: 200px;
+  left: 700px;
+ }
+
+.splash-title{
+  position: absolute;
+  top: 200px;
+  left: 700px;
+  transform: translate(-50%, 271%);
+  font-size: 36px;
+  font-weight: 100;
+  color: #9e2c1c;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-color: white;
+  background-color: white; 
+  padding: 3px;
+  border-radius: 5px;
+}
+
+

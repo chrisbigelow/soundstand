@@ -18,7 +18,7 @@
     "webpack": "^3.8.1"
   },
   "engines": {
-    "node":"6.10.1",
+    "node":"v6.10.1",
     "npm":"3.10.10"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",

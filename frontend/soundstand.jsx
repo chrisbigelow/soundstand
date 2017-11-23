@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/Root';
 import configureStore from './store/store';
 import {signup, logout} from './actions/session_actions';
+import {fetchSong} from './actions/song_actions';
 import {getSong,getSongs, deleteSong, addSong, updateSong} from './util/song_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,19 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore(preloadedState);
   ReactDOM.render(<Root store={ store }/>, root);
 
-  // // const store = configureStore();
-  // // // we don't put the store directly on the window because
-  // // // it can be confusing when debugging, sometimes giving you access to state
-  // // // when you shouldn't
-  // window.getState = store.getState;
-  // window.preloadedState = preloadedState;
-  // window.logout = logout;
-  // window.dispatch = store.dispatch; // just for testing!
 
-  window.getSong = getSong;
-  window.getSongs = getSongs;
-  window.deleteSong = deleteSong;
-  window.addSong = addSong;
-  window.updateSong = updateSong;
+  //TESTING
+
+  // const store = configureStore();
+  // // // we don't put the store directly on the window because
+  // // it can be confusing when debugging, sometimes giving you access to state
+  // // when you shouldn't
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch; // just for testing!
+  // window.fetchSong = fetchSong;
+  // window.getSong = getSong;
+  // window.getSongs = getSongs;
+  // window.deleteSong = deleteSong;
+  // window.addSong = addSong;
+  // window.updateSong = updateSong;
 
 });

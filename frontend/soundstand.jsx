@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/Root';
 import configureStore from './store/store';
 import {signup, logout} from './actions/session_actions';
+import {getSong,getSongs, deleteSong, addSong, updateSong} from './util/song_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -21,5 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.preloadedState = preloadedState;
   // window.logout = logout;
   // window.dispatch = store.dispatch; // just for testing!
+
+  window.getSong = getSong;
+  window.getSongs = getSongs;
+  window.deleteSong = deleteSong;
+  window.addSong = addSong;
+  window.updateSong = updateSong;
 
 });

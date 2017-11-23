@@ -1,37 +1,37 @@
-export const addSong = (song) => {
+export const addSong = (song) => (
   $.ajax({
     url: "api/songs",
     method: "POST",
     data: song
-  });
-};
+  })
+);
 
-export const deleteSong = (id) => {
+export const deleteSong = (id) => (
   $.ajax({
     url: `api/songs/${id}`,
     method: "DELETE"
-  });
-};
+  })
+);
 
-export const updateSong = (song) => {
+export const updateSong = (song) => (
   $.ajax({
     url: `api/songs/${song.id}`,
     method: "PATCH",
-    data: song
-  });
-};
+    data: {song}
+  })
+);
 
-export const getSong = (id) => {
+export const getSong = (id) => (
   $.ajax({
     url: `api/songs/${id}`,
     method: "GET"
-  });
-};
+  })
+);
 
-export const getSongs = (id) => {
+export const getSongs = () => (
   $.ajax({
     url: `api/songs`,
     method: "GET"
-  });
-};
+  })
+);
 

@@ -10,7 +10,7 @@ class Api::SongsController < ApplicationController
   end
 
   def update
-    @song = Song.find_by(params[:id])
+    @song = Song.find_by(id: params[:id])
     if @song && @song.update_attributes(song_params)
       render :show
     elsif !@song
@@ -21,7 +21,8 @@ class Api::SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find_by(params[:id])
+    @song = Song.find_by(id: params[:id])
+    render json: ["Couldn't Locate Track"] unless @song
   end
 
   def index
@@ -29,7 +30,7 @@ class Api::SongsController < ApplicationController
   end
 
   def destroy
-    @song = Song.find_by(params[:id])
+    @song = Song.find_by(id: params[:id])
     if @song
       @song.destroy
       render :show

@@ -21,12 +21,14 @@ export default ({currentUser, logout, login}) => {
 
   return (
     <header className="navbar">
+      <Link className="link-container" to="/">
       <img className="logo-img" src="https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png"/>
       <h1 className="logo">soundstand</h1>
+      </Link>
       <div className="session-buttons">
         {display}
       </div>
     </header>
     
   );
-}
+};

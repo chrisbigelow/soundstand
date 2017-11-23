@@ -8,5 +8,4 @@ class Song < ApplicationRecord
     class_name: :User
     
 
-
 end

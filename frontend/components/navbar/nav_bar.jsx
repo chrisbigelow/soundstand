@@ -11,8 +11,7 @@ export default ({currentUser, logout, login}) => {
   ) : 
   (
     <div>
-       
-      <button className= "session-button" onClick={() => (login({user: demoUser}))}>Demo User</button>
+      <button className= "session-bttn-demo session-button" onClick={() => (login({user: demoUser}))}>Demo User</button>
       <Link className="session-bttn-create session-button" to="/signup">Sign Up</Link>
       <Link className="session-bttn-log session-button" to="/login">Log In</Link>
     </div>

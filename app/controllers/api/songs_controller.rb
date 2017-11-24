@@ -1,7 +1,10 @@
 class Api::SongsController < ApplicationController
 
+  before_action :require_login
+
   def create
     @song = Song.new(song_params)
+    @song.user_id = current_user.id
     if @song.save
       render :show
     else
@@ -42,7 +45,7 @@ class Api::SongsController < ApplicationController
 private
 
 def song_params
-  params.require(:song).permit(:title, :description, :user_id)
+  params.require(:song).permit(:title, :description)
 end
 
 

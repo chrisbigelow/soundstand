@@ -13,7 +13,7 @@ const App = () => (
     <Route path="/" component={NavbarContainer}/>
     <Route exact path="/" component={Main} />
     <Route path="/songs" component={SongsContainer} />
-    {/* <Route path="/upload" component={SongFormContainer} /> */}
+    <Route path="/upload" component={SongFormContainer} />
     <Route path='/signup' component={SignupContainer}/>
     <Route path='/login' component={SigninContainer}/>
   </div>

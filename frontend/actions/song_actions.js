@@ -3,6 +3,8 @@ import * as APIUtil from '../util/song_api_util';
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const RECEIVE_SONG = 'RECEIVE_SONG';
 
+export const RECEIVE_FORM_ERRORS = 'RECEIVE_FORM_ERRORS';
+
 export const receiveSongs = songs => ({
   type: RECEIVE_SONGS,
   songs
@@ -13,10 +15,15 @@ export const receiveSong = payload => ({
   payload
 });
 
+export const receiveFormErrors = errors => ({
+  type: RECEIVE_FORM_ERRORS,
+  errors
+});
+
 export const createSong = song => dispatch => (
-  APIUtil.createSong(song).then((res) => (
+  APIUtil.createSong({song: song}).then((res) => (
     dispatch(receiveSong(res))
-  ))
+  ), err => (dispatch(receiveFormErrors(err.responseJSON))))
 );
 
 export const fetchSong = id => dispatch => (

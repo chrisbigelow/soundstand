@@ -1,4 +1,4 @@
-export const addSong = (song) => (
+export const createSong = (song) => (
   $.ajax({
     url: "api/songs",
     method: "POST",

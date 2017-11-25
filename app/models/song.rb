@@ -4,7 +4,7 @@ class Song < ApplicationRecord
   validates :song_image,
     attachment_content_type: { content_type: /\Aimage\/.*\Z/ },
     attachment_size: { less_than: 5.megabytes }
-  validates :song,
+  validates :song, presence: true,
     # attachment audio type
     attachment_content_type: { content_type: /.*/ }, 
     attachment_size: { less_than: 100.megabytes } 

@@ -21,7 +21,7 @@ export const receiveFormErrors = errors => ({
 });
 
 export const createSong = song => dispatch => (
-  APIUtil.createSong({song: song}).then((res) => (
+  APIUtil.createSong(song).then((res) => (
     dispatch(receiveSong(res))
   ), err => (dispatch(receiveFormErrors(err.responseJSON))))
 );

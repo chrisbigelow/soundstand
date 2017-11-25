@@ -10,6 +10,10 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
@@ -19,15 +23,29 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const userParams = this.state;
-    this.props.signup({user: userParams}).then(() => this.props.history.push('/'));
+    this.props.signup({user: userParams}).then(() => this.props.history.push('/songs'));
 
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
 
   render () {
     return (
       <div className="session-form">
         <h2>Sign up and start listening today.</h2>
+        {this.renderErrors()}
         <form>
           <label className="form-label">username
             <input 

@@ -10,6 +10,10 @@ class Signin extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
@@ -19,8 +23,22 @@ class Signin extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const userParams = this.state;
-    this.props.login({user: userParams}).then(() => this.props.history.push('/'));
+    this.props.login({user: userParams}).then(() => this.props.history.push('/songs'));
 
+  }
+
+  renderErrors() {
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
 
@@ -28,6 +46,7 @@ class Signin extends React.Component {
     return (
       <div className="session-form">
         <h2>Sign In</h2>
+        {this.renderErrors()}
         <form>
           <label className="form-label">username
             <input 

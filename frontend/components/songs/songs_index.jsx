@@ -20,6 +20,7 @@ class SongsIndex extends React.Component {
               <SongItem
                 key={`song${song.id}`}
                 song = {song}
+                deleteSong={this.props.deleteSong}
               />
             ))
           }

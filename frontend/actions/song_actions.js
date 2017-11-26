@@ -2,7 +2,7 @@ import * as APIUtil from '../util/song_api_util';
 
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const RECEIVE_SONG = 'RECEIVE_SONG';
-
+export const REMOVE_SONG = "REMOVE_SONG";
 export const RECEIVE_FORM_ERRORS = 'RECEIVE_FORM_ERRORS';
 
 export const receiveSongs = songs => ({
@@ -18,6 +18,11 @@ export const receiveSong = payload => ({
 export const receiveFormErrors = errors => ({
   type: RECEIVE_FORM_ERRORS,
   errors
+});
+
+export const removeSong = (id) => ({
+  type: REMOVE_SONG,
+  songId: id
 });
 
 export const createSong = song => dispatch => (
@@ -44,14 +49,14 @@ export const updateSong = song => dispatch => (
   ))
 );
 
+//delete
 
-//how to delete
+export const deleteSong = id => dispatch => (
+  APIUtil.deleteSong(id).then((res) => (
+    dispatch(removeSong(res))
+  ))
+);
 
-// export const deleteSong = id => dispatch => (
-//   APIUtil.deleteSong(id).then((res) => (
-//     dispatch(receiveSongs(res))
-//   ))
-// );
 
 
 

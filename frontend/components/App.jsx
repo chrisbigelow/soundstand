@@ -4,6 +4,7 @@ import SigninContainer from './session/signin_container';
 import NavbarContainer from './navbar/nav_bar_container';
 import SongsContainer from './songs/songs_index_container';
 import SongFormContainer from './songs/song_form_container';
+import UserPageContainer from './users/user_page_container';
 import Main from './main_page/main';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
@@ -14,6 +15,7 @@ const App = () => (
     <Route path="/" component={NavbarContainer}/>
     <Route exact path="/" component={Main} />
     <ProtectedRoute path="/songs" component={SongsContainer} />
+    {/* <ProtectedRoute path="/:user_name" component={UserPageContainer}/> */}
     <ProtectedRoute path="/upload" component={SongFormContainer} />
     <AuthRoute path='/signup' component={SignupContainer}/>
     <AuthRoute path='/login' component={SigninContainer}/>

@@ -6,16 +6,17 @@ import SongsContainer from './songs/songs_index_container';
 import SongFormContainer from './songs/song_form_container';
 import Main from './main_page/main';
 import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 
 
 const App = () => (
-  <div>
+  <div className="app-container">
     <Route path="/" component={NavbarContainer}/>
     <Route exact path="/" component={Main} />
-    <Route path="/songs" component={SongsContainer} />
-    <Route path="/upload" component={SongFormContainer} />
-    <Route path='/signup' component={SignupContainer}/>
-    <Route path='/login' component={SigninContainer}/>
+    <ProtectedRoute path="/songs" component={SongsContainer} />
+    <ProtectedRoute path="/upload" component={SongFormContainer} />
+    <AuthRoute path='/signup' component={SignupContainer}/>
+    <AuthRoute path='/login' component={SigninContainer}/>
   </div>
 );
 

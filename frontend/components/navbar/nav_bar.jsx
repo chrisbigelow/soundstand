@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default ({currentUser, logout, login, history}) => {
   const demoUser = {username: "testUser", password: "password"}
+  const barName = currentUser ? "logged-in-nav" : "navbar";
   const display = currentUser ? 
   (
     <div>
@@ -20,7 +21,7 @@ export default ({currentUser, logout, login, history}) => {
 
 
   return (
-    <header className="navbar">
+    <header className={barName}>
       <Link className="link-container" to="/">
       <img className="logo-img" src="https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png"/>
       <h1 className="logo">soundstand</h1>

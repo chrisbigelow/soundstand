@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Catamaran');
 @import url('https://fonts.googleapis.com/css?family=Lato:900');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 @import 'components/main';
 @import 'components/navbar';
 @import 'components/session';
+@import 'components/app_container';

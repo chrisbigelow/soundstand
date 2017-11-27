@@ -12,19 +12,16 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 
 
 const App = () => (
-  <div>
     <div className="app-container">
-      <Route path="/" component={NavbarContainer}/>
-      <Route exact path="/" component={Main} />
-      <ProtectedRoute exact path="/songs" component={SongsContainer} />
-      <ProtectedRoute exact path="/users/:username" component={UserPageContainer}/>
-      <ProtectedRoute exact path="/upload" component={SongFormContainer} />
-      <AuthRoute exact path='/signup' component={SignupContainer}/>
-      <AuthRoute exact path='/login' component={SigninContainer}/>
+        <Route path="/" component={NavbarContainer}/>
+        <Route exact path="/" component={Main} />
+        <ProtectedRoute exact path="/songs" component={SongsContainer} />
+        <ProtectedRoute exact path="/users/:username" component={UserPageContainer}/>
+        <ProtectedRoute exact path="/upload" component={SongFormContainer} />
+        <AuthRoute exact path='/signup' component={SignupContainer}/>
+        <AuthRoute exact path='/login' component={SigninContainer}/>
+        <PlayerContainer/>
     </div>
-
-    <PlayerContainer/>
-  </div>
 );
 
 export default App;

@@ -1,13 +1,28 @@
 import React from 'react';
 
-export default ( { song, deleteSong, currentUser, addSongToQueue } ) => {
+export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } ) => {
 
    const handleDelete = (e) => {
      e.preventDefault();
      deleteSong(song.id);
    };
-  console.log(currentUser);
-  const isUser = (currentUser.id === song.user_id ) ? "enabled" : "disabled";
+
+
+   const handleSongPlay = (e) => {
+     e.preventDefault();
+     addSongToQueue(song);
+       let player = document.getElementsByClassName("react-audio-player")[0];
+       let promise = player.play();
+       if (promise !== undefined) {
+        promise.then(function() {
+          console.log("playing!");
+        }).catch(function(error) {
+          console.log(error);
+        });
+       }
+   };
+
+  const isUserButton = (currentUser.id === song.user_id ) ? "enabled" : "disabled";
 
   return (
     <li>
@@ -21,8 +36,8 @@ export default ( { song, deleteSong, currentUser, addSongToQueue } ) => {
               <li>{song.artist}</li>
             </ul>
           </li>
-          <li><button className="play-button" onClick={() => addSongToQueue(song)}>PLAY</button></li>
-          <li><button className={isUser} onClick={ handleDelete.bind(this) }>Delete Song</button></li>
+          <li><button className="play-button" onClick={ handleSongPlay.bind(this) }>PLAY</button></li>
+          <li><button className={isUserButton} onClick={ handleDelete.bind(this) }>Delete Song</button></li>
           <li className="audio-player-html">
             <audio controls>
               <source src={song.song_file} type="audio/mpeg"/>

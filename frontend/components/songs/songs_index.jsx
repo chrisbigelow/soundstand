@@ -23,6 +23,7 @@ class SongsIndex extends React.Component {
                 deleteSong={this.props.deleteSong}
                 currentUser={this.props.currentUser}
                 addSongToQueue={this.props.addSongToQueue}
+                currentSong={this.props.currentSong}
               />
             ))
           }

@@ -8,7 +8,7 @@ class Player extends React.Component {
   }
 
   handlePlay(e) {
-
+  
   }
 
   handlePause(e){
@@ -20,20 +20,41 @@ class Player extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-    if (!this.props.playlist){
-      return (null);
-    } else {
-      return(
-      <div className="audio-player">
-        <ReactAudioPlayer controls autoPlay src={this.props.playlist.currentSong}
-          onEnded={this.handleEnded.bind(this)}
-          onPlay={this.handlePlay.bind(this)}
-          onPause={this.handlePause.bind(this)}>
-        </ReactAudioPlayer>
-      </div>
-    );
+    
+    let songInfo = "";
+    let currentSongUrl = "";
+
+    if (this.props.currentSong){
+    
+      currentSongUrl = this.props.currentSong.song_file;
+      songInfo = (
+          <div className="song-info-container">
+            <div className="current-song-image-container">
+              <img src={this.props.currentSong.song_image} alt=""></img>
+            </div>
+            <div className="title-song-name">
+              <ul>
+                <li>{this.props.currentSong.title}</li>
+                <li>{this.props.currentSong.artist}</li>
+              </ul>
+            </div>
+          </div>
+      );
    }
+
+
+   return(
+    <div className="audio-player-container">
+      <h1>Audio Player</h1>
+      <ReactAudioPlayer id="react-player" className="audio-player" controls autoplay src={currentSongUrl}
+        onEnded={this.handleEnded.bind(this)}
+        onPlay={this.handlePlay.bind(this)}
+        onPause={this.handlePause.bind(this)}>
+      </ReactAudioPlayer>
+      {songInfo}
+    </div>
+  );
+
   }
 
 }

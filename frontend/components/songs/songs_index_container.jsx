@@ -8,7 +8,8 @@ import { addSongToQueue } from '../../actions/player_actions';
 const mapStateToProps = state => (
   {
   songs: Object.values(state.entities.songs),
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  currentSong: state.entities.playlist[0]
   }
 );
 

@@ -1,12 +1,27 @@
+
+.song-info-container{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.current-song-image-container img{
+  width: 150px;
+  height: 150px;
+
+}
+
 .audio-player-container{
-  // background-color: #111111;
+  display: flex;
+  flex-direction: column;
   background: none;
-  color: #e6e9ee;
+  color: #000000;
   bottom: 0;
   position: fixed;
   width: 100%;
 }
 
+
 .audio-player {
+  display: flex;
   width: 100%;
 }

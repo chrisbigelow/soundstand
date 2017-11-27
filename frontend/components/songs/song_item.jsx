@@ -11,15 +11,6 @@ export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } 
    const handleSongPlay = (e) => {
      e.preventDefault();
      addSongToQueue(song);
-       let player = document.getElementsByClassName("react-audio-player")[0];
-       let promise = player.play();
-       if (promise !== undefined) {
-        promise.then(function() {
-          console.log("playing!");
-        }).catch(function(error) {
-          console.log(error);
-        });
-       }
    };
 
   const isUserButton = (currentUser.id === song.user_id ) ? "enabled" : "disabled";

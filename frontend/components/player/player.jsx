@@ -19,6 +19,18 @@ class Player extends React.Component {
     this.playNextSong();
   }
 
+  handleLoaded(e) {
+    let player = document.getElementsByClassName("react-audio-player")[0];
+    let promise = player.play();
+    if (promise !== undefined) {
+      promise.then(function() {
+      console.log("playing!");
+      }).catch(function(error) {
+      console.log(error);
+      });
+    }
+  }
+
   render() {
     
     let songInfo = "";
@@ -29,15 +41,21 @@ class Player extends React.Component {
       currentSongUrl = this.props.currentSong.song_file;
       songInfo = (
           <div className="song-info-container">
-            <div className="current-song-image-container">
-              <img src={this.props.currentSong.song_image} alt=""></img>
-            </div>
-            <div className="title-song-name">
-              <ul>
-                <li>{this.props.currentSong.title}</li>
-                <li>{this.props.currentSong.artist}</li>
-              </ul>
-            </div>
+            <ul>
+              <li>
+                  <div className="current-song-image-container">
+                    <img src={this.props.currentSong.song_image} alt=""></img>
+                  </div>
+              </li>
+              <li>
+                  <div className="title-song-name">
+                    <ul>
+                      <li>{this.props.currentSong.title}</li>
+                      <li>{this.props.currentSong.artist}</li>
+                    </ul>
+                  </div>
+              </li>
+            </ul>
           </div>
       );
    }
@@ -45,13 +63,16 @@ class Player extends React.Component {
 
    return(
     <div className="audio-player-container">
-      <h1>Audio Player</h1>
-      <ReactAudioPlayer id="react-player" className="audio-player" controls autoplay src={currentSongUrl}
-        onEnded={this.handleEnded.bind(this)}
-        onPlay={this.handlePlay.bind(this)}
-        onPause={this.handlePause.bind(this)}>
-      </ReactAudioPlayer>
-      {songInfo}
+      <ul>
+        <li>{songInfo}</li>
+      </ul>
+      <ReactAudioPlayer className="audio-player" controls autoplay src={currentSongUrl}
+          onEnded={this.handleEnded.bind(this)}
+          onPlay={this.handlePlay.bind(this)}
+          onPause={this.handlePause.bind(this)}
+          onCanPlay={this.handleLoaded.bind(this)}
+          >
+        </ReactAudioPlayer>
     </div>
   );
 

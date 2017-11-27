@@ -19,5 +19,42 @@
 }
 
 .audio-player-html {
-  margin-top: 75px;
+  margin-top: 36px;
+}
+
+.song-info {
+  margin-bottom: 13px;
+}
+
+.play-button {
+  border-radius: 34%;
+  background-color: #e0442c;
+  padding: 8px;
+  padding-left: 12px;
+}
+
+.play-button:hover {
+  background-color: rgb(124, 0, 0);
+  cursor: pointer;
+}
+
+.edit-and-delete-buttons {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: -69px;
+  right: -81px;
+}
+
+.edit-and-delete-buttons li {
+  padding-right: 5px;
+  text-decoration: none;
+}
+
+.fa-pencil-square-o {
+  color: black;
+}
+
+.fa-times:hover {
+  cursor: pointer;
 }

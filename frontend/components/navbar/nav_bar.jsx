@@ -8,6 +8,7 @@ export default ({currentUser, logout, login, history}) => {
   const display = currentUser ? 
   (
     <div>
+    <Link className="username upload-page-button" to='/upload'>Upload</Link>
     <Link className="username" to={`/users/${currentUser.username}`}>{currentUser.username}</Link>
     <button className="session-bttn-demo session-button" onClick={() => logout().then(() => history.push('/'))}>Logout</button>
     </div>

@@ -6,7 +6,8 @@ import {fetchSongs, deleteSong} from '../../actions/song_actions';
 
 const mapStateToProps = state => (
   {
-  songs: Object.values(state.entities.songs)
+  songs: Object.values(state.entities.songs),
+  currentUser: state.session.currentUser
   }
 );
 

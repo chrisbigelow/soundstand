@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 export default ({currentUser, logout, login, history}) => {
   const demoUser = {username: "testUser", password: "password"}
   const barName = currentUser ? "logged-in-nav" : "navbar";
+  const collection = currentUser ? (<Link className="stream-button" to='/songs'>Collection</Link>) : (<div></div>);
   const display = currentUser ? 
   (
     <div>
-    <p className="username">{currentUser.username}</p>
+    <Link className="username" to={`/users/${currentUser.username}`}>{currentUser.username}</Link>
     <button className="session-bttn-demo session-button" onClick={() => logout().then(() => history.push('/'))}>Logout</button>
     </div>
   ) : 
@@ -26,6 +27,7 @@ export default ({currentUser, logout, login, history}) => {
       <img className="logo-img" src="https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png"/>
       <h1 className="logo">soundstand</h1>
       </Link>
+      {collection}
       <div className="session-buttons">
         {display}
       </div>

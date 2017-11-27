@@ -29,7 +29,11 @@ class Api::SongsController < ApplicationController
   end
 
   def index
-    @songs = Song.all
+    if params[:user_id]
+      @songs = Song.where(user_id: params[:user_id])
+    else
+      @songs = Song.all
+    end
   end
 
   def destroy

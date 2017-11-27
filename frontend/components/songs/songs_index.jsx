@@ -21,6 +21,7 @@ class SongsIndex extends React.Component {
                 key={`song${song.id}`}
                 song = {song}
                 deleteSong={this.props.deleteSong}
+                currentUser={this.props.currentUser}
               />
             ))
           }

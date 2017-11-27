@@ -38,3 +38,11 @@ export const getSongs = () => (
   })
 );
 
+export const getUserSongs = (id) => (
+  $.ajax({
+    url: `/api/users/${id}/songs`,
+    method: "GET"
+  })
+);
+
+

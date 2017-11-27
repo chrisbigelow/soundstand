@@ -1,11 +1,13 @@
 import React from 'react';
 
-export default ( { song, deleteSong } ) => {
+export default ( { song, deleteSong, currentUser } ) => {
 
    const handleDelete = (e) => {
      e.preventDefault();
      deleteSong(song.id);
    };
+  console.log(currentUser);
+  const isUser = (currentUser.id === song.user_id ) ? "enabled" : "disabled";
 
   return (
     <li>
@@ -19,7 +21,7 @@ export default ( { song, deleteSong } ) => {
               <li>{song.artist}</li>
             </ul>
           </li>
-          <li><button onClick={ handleDelete.bind(this) }>Delete Song</button></li>
+          <li><button className={isUser} onClick={ handleDelete.bind(this) }>Delete Song</button></li>
           <li className="audio-player">
             <audio controls>
               <source src={song.song_file} type="audio/mpeg"/>

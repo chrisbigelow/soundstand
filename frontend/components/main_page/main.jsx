@@ -39,7 +39,7 @@ export default () => (
       </div>
     </section>
     <footer className="footer">
-        <i class="fa fa-male footer-icons" aria-hidden="true"></i>
+        <i className="fa fa-male footer-icons" aria-hidden="true"></i>
         <i className="fa fa-github footer-icons" aria-hidden="true"></i>
         <i className="fa fa-envelope footer-icons" aria-hidden="true"></i>
         <p>Copyright © 2017 Chris Bigelow</p>

@@ -14,11 +14,11 @@ const App = () => (
   <div className="app-container">
     <Route path="/" component={NavbarContainer}/>
     <Route exact path="/" component={Main} />
-    <ProtectedRoute path="/songs" component={SongsContainer} />
-    {/* <ProtectedRoute path="/:user_name" component={UserPageContainer}/> */}
-    <ProtectedRoute path="/upload" component={SongFormContainer} />
-    <AuthRoute path='/signup' component={SignupContainer}/>
-    <AuthRoute path='/login' component={SigninContainer}/>
+    <ProtectedRoute exact path="/songs" component={SongsContainer} />
+    <ProtectedRoute exact path="/users/:username" component={UserPageContainer}/>
+    <ProtectedRoute exact path="/upload" component={SongFormContainer} />
+    <AuthRoute exact path='/signup' component={SignupContainer}/>
+    <AuthRoute exact path='/login' component={SigninContainer}/>
   </div>
 );
 

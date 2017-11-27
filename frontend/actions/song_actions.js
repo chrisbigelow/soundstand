@@ -57,6 +57,11 @@ export const deleteSong = id => dispatch => (
   ))
 );
 
+export const fetchUserSongs = (id) => (dispatch) => {
+  return APIUtil.getUserSongs(id)
+    .then((res) => dispatch(receiveSongs(res)));
+};
+
 
 
 

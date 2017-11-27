@@ -17,7 +17,7 @@
   font-family: 'Catamaran', sans-serif;
   -webkit-transform: translateZ(0);
   -webkit-font-smoothing: subpixel-antialiased;
-  background: rgb(41, 31, 27);
+  background:#404040;
   height: 46px;
   transition: height .2s ease-in-out;
 }
@@ -84,13 +84,45 @@
 
 .username {
   display: inline-block;
-  color: white;
-  padding-right: 10px;
+  color: rgb(190, 190, 190);
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  border-right: 0.2px solid;
+  border-left: 0.2px solid;
+  margin-right: 10px;
+}
+
+.username:hover {
+  color:#ffffff;
+  border-color: rgb(190, 190, 190);
+  // border: none;
 }
 
 .link-container {
-  display: block;
+  display: inline-block;
   width: 200px;
+}
+
+.stream-button {
+  display: inline-block;
+  color: rgb(190, 190, 190);
+  padding: 10px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  border-right: 0.2px solid;
+  border-left: 0.2px solid;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.stream-button:hover {
+  color:#ffffff;
+  border-color: rgb(190, 190, 190);
+  // border: none;
 }
 
 

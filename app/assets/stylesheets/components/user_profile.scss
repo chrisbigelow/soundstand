@@ -1,0 +1,63 @@
+.user-profile {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-header {
+  display: flex;
+  width: 80%;
+  background-image: url("http://res.cloudinary.com/dmzulpcul/image/upload/v1511737342/warm-country-floor_r081bo.jpg");
+  height: 300px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.info-section {
+  display: flex;
+  margin: 60px;
+  width: 500px;
+  height: 200px;
+
+}
+
+.profile-image {
+    display: flex; 
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: yellow;
+    object-fit: cover;
+    object-position: center right;
+}
+
+.user-info {
+  margin: 10px;
+  margin-top: 0px;
+  margin-left: 48px;
+  color: white;
+}
+
+.user-info li:first-child{
+  display: inline-block;
+  background-color: rgba(0,0,0,.8);
+  font-size: 24px;
+  line-height: 37px;
+  padding: 4px 7px;
+  
+}
+
+.user-tracks {
+  margin: auto;
+  width: 80%;
+  background-color: white;
+  height: 800px;
+  background-size: 100% auto;
+}
+
+.enabled {
+
+}
+
+.disabled {
+  display: none;
+}

@@ -9,6 +9,7 @@
     "css-loader": "^0.28.7",
     "lodash": "^4.17.4",
     "react": "^16.1.1",
+    "react-audio-player": "^0.6.2",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -18,8 +19,8 @@
     "webpack": "^3.8.1"
   },
   "engines": {
-    "node":"v6.10.1",
-    "npm":"3.10.10"
+    "node": "v6.10.1",
+    "npm": "3.10.10"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",

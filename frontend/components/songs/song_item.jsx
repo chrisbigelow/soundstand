@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ( { song, deleteSong, currentUser } ) => {
+export default ( { song, deleteSong, currentUser, addSongToQueue } ) => {
 
    const handleDelete = (e) => {
      e.preventDefault();
@@ -21,8 +21,9 @@ export default ( { song, deleteSong, currentUser } ) => {
               <li>{song.artist}</li>
             </ul>
           </li>
+          <li><button className="play-button" onClick={() => addSongToQueue(song)}>PLAY</button></li>
           <li><button className={isUser} onClick={ handleDelete.bind(this) }>Delete Song</button></li>
-          <li className="audio-player">
+          <li className="audio-player-html">
             <audio controls>
               <source src={song.song_file} type="audio/mpeg"/>
             </audio>

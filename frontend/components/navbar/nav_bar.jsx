@@ -24,7 +24,7 @@ export default ({currentUser, logout, login, history}) => {
   return (
     <header className={barName}>
       <Link className="link-container" to="/">
-      <img className="logo-img" src="https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png"/>
+      <img className="logo-img" src="http://res.cloudinary.com/dmzulpcul/image/upload/c_scale,h_22/v1511758120/noun_1126327_cc_zy2ose.png"/>
       <h1 className="logo">soundstand</h1>
       </Link>
       {collection}

@@ -8,7 +8,6 @@ class userPage extends React.Component {
   }
 
   componentWillMount() {
-    console.log("this was first");
     this.props.fetchUser(this.props.match.params.username).then((res) => this.props.fetchUserSongs(res.user.id));
   }
 

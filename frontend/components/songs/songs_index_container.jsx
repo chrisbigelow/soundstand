@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import SongsIndex from './songs_index';
 
 import {fetchSongs, deleteSong} from '../../actions/song_actions';
+import { addSongToQueue } from '../../actions/player_actions';
 
 const mapStateToProps = state => (
   {
@@ -13,7 +14,8 @@ const mapStateToProps = state => (
 
 const mapDispatchToProps = dispatch => ({
   fetchSongs: () => dispatch(fetchSongs()),
-  deleteSong: (id) => dispatch(deleteSong(id))
+  deleteSong: (id) => dispatch(deleteSong(id)),
+  addSongToQueue: (song) => dispatch(addSongToQueue(song))
 });
 
 export default connect(

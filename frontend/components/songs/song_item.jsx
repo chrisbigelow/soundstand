@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } ) => {
 
@@ -29,6 +30,7 @@ export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } 
           </li>
           <li><button className="play-button" onClick={ handleSongPlay.bind(this) }>PLAY</button></li>
           <li><button className={isUserButton} onClick={ handleDelete.bind(this) }>Delete Song</button></li>
+          <li><Link className={isUserButton} to={`/edit/${song.id}`}>Edit Song</Link></li>
           <li className="audio-player-html">
             <audio controls>
               <source src={song.song_file} type="audio/mpeg"/>

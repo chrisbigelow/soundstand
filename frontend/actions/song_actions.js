@@ -44,7 +44,7 @@ export const fetchSongs = song => dispatch => (
 );
 
 export const updateSong = song => dispatch => (
-  APIUtil.getSongs(song).then((res) => (
+  APIUtil.updateSong(song).then((res) => (
     dispatch(receiveSong(res))
   ))
 );

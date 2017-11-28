@@ -60,7 +60,7 @@ class Main extends React.Component {
        >
       <div className="modal-container">
         <ul>
-          <li className="x-button"><a onClick={this.closeModal}><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
+          <li className="x-button"><a onClick={this.closeModal}><i className="fa fa-times-circle" aria-hidden="true"></i></a></li>
           <li className="signup-container"><SignupContainer /></li>
         </ul>
       </div>

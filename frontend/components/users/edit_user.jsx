@@ -2,7 +2,7 @@ import React from 'react';
 
 import { withRouter } from 'react-router-dom';
 
-class SongEdit extends React.Component {
+class EditUser extends React.Component {
 
   constructor(props){
     super(props);
@@ -11,12 +11,12 @@ class SongEdit extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchSong(this.props.match.params.songId);
+    this.props.fetchUser(this.props.match.params.username);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.songId !== nextProps.match.params.songId) {
-      this.props.fetchSong(nextProps.match.params.songId);
+    if (this.props.match.params.username !== nextProps.match.params.username) {
+      this.props.fetchUser(nextProps.match.params.username);
     }
   }
 
@@ -25,12 +25,11 @@ class SongEdit extends React.Component {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("song[id]", this.props.match.params.songId);
-    formData.append("song[song_file]", undefined);
-    formData.append("song[title]", this.state.title);
-    formData.append("song[description]", this.state.description);
-    formData.append("song[song_image]", this.state.imageFile);
-    this.props.updateSong(formData).then((data) => this.props.history.push('/songs'));
+    formData.append("user[username]", this.props.match.params.username);
+    formData.append("user[name]", this.state.name);
+    formData.append("user[location]", this.state.location);
+    formData.append("user[profile_image]", this.state.profileFile);
+    this.props.updateUser(formData).then((data) => this.props.history.push('/songs'));
   }
 
 
@@ -62,35 +61,34 @@ class SongEdit extends React.Component {
 
   render() {
 
+    const user = Object.values(this.props.users)[0];
 
-    const song = Object.values(this.props.songs)[0];
-
-    if (!song) return null;
+    if (!user) return null;
 
     return (
       <section>
-        <h1>Edit Song</h1>
-        <form className="song-form" onSubmit={this.handleSubmit}>
+        <h1>Edit User Profile</h1>
+        <form className="user-update" onSubmit={this.handleSubmit}>
           <input 
             type="text"
-            placeholder={song.title}
-            onChange={this.update('title')}
+            placeholder={user.name}
+            onChange={this.update('name')}
           />
           <input 
             type="text"
-            placeholder={song.title}
-            onChange={this.update('description')}
+            placeholder={user.location}
+            onChange={this.update('location')}
           />
           
 
-          <label>Song Image:
+          <label>User Image:
           <input
             type="file"
-            onChange={this.fileUpload("image")}
+            onChange={this.fileUpload("profile")}
           />
           </label>
 
-          <button>Update Song</button>
+          <button>Update User Profile</button>
         </form>
       </section>
     );
@@ -98,4 +96,4 @@ class SongEdit extends React.Component {
 
 }
 
-export default withRouter(SongEdit);
+export default withRouter(EditUser);

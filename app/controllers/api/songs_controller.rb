@@ -15,8 +15,8 @@ class Api::SongsController < ApplicationController
   def update
 
     @song = Song.find_by(id: params[:id])
+    params[:song][:song_image] = @song.song_image if params[:song][:song_image] == "undefined"
     if @song && @song.update_attributes(params.require(:song).permit(:title, :description, :song_image))
-      
       render :show
     elsif !@song
       render json: ["Coudn't locate track"], status: 400

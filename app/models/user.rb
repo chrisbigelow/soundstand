@@ -5,12 +5,22 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  validates :profile_image,
+    attachment_content_type: { content_type: /\Aimage\/.*\Z/ },
+    attachment_size: { less_than: 5.megabytes }
+
   after_initialize :ensure_session_token
 
   has_many :songs,
    primary_key: :id,
    foreign_key: :user_id,
    class_name: :Song
+
+  has_attached_file :profile_image, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
 
   def self.find_by_credentials(username,password) 
     @user = User.find_by(username: username)

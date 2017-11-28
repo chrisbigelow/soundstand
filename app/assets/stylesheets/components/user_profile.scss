@@ -20,12 +20,22 @@
 
 }
 
+.edit-section {
+  width: 100%;
+  text-align: right;
+  font-size: 43px;
+  padding: 0.6%;
+}
+
+.edit-section i {
+
+}
+
 .profile-image {
     display: flex; 
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: yellow;
     object-fit: cover;
     object-position: center right;
 }

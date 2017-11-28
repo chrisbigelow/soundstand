@@ -45,4 +45,4 @@ export default () => (
         <p>Copyright © 2017 Chris Bigelow</p>
     </footer>
   </div>
-)
+);

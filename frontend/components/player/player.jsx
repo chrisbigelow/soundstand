@@ -19,6 +19,17 @@ class Player extends React.Component {
     this.playNextSong();
   }
 
+  menuClick() {
+    document.getElementById("dropup").classList.toggle("show");
+    if ( document.getElementById("caret").classList.contains('fa-caret-up') ) {
+      document.getElementById("caret").classList.remove('fa-caret-up');
+      document.getElementById("caret").classList.add('fa-caret-down');
+    } else {
+      document.getElementById("caret").classList.remove('fa-caret-down');
+      document.getElementById("caret").classList.add('fa-caret-up');
+    }
+  } 
+
   handleLoaded(e) {
     let player = document.getElementsByClassName("react-audio-player")[0];
     let promise = player.play();
@@ -32,6 +43,8 @@ class Player extends React.Component {
   }
 
   render() {
+
+    let carrotPointerUp = (<i id="caret" className="fa fa-caret-up" aria-hidden="true"></i>);
     
     let songInfo = "";
     let currentSongUrl = "";
@@ -43,13 +56,16 @@ class Player extends React.Component {
           <div className="song-info-container">
             <ul>
               <li>
-                  <div className="current-song-image-container">
-                    <img src={this.props.currentSong.song_image} alt=""></img>
-                  </div>
+                <a id="carrot-anchor-up" onClick={() => this.menuClick()} className="carrot">{carrotPointerUp}</a>
               </li>
-              <li>
+              <li id="dropup" className="song-dropup">
                   <div className="title-song-name">
                     <ul>
+                      <li>
+                        <div className="current-song-image-container">
+                          <img src={this.props.currentSong.song_image} alt=""></img>
+                        </div>
+                      </li>
                       <li>{this.props.currentSong.title}</li>
                       <li>{this.props.currentSong.artist}</li>
                     </ul>

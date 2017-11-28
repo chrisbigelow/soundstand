@@ -28,10 +28,10 @@ export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } 
               <li>{song.artist}</li>
             </ul>
           </li>
-          <li><a className="play-button" onClick={ handleSongPlay.bind(this) }><i class="fa fa-play" aria-hidden="true"></i></a></li>
+          <li><a className="play-button" onClick={ handleSongPlay.bind(this) }><i className="fa fa-play" aria-hidden="true"></i></a></li>
           <div className="edit-and-delete-buttons">
-            <li><a className={isUserButton} onClick={ handleDelete.bind(this) }><i class="fa fa-times" aria-hidden="true"></i></a></li>
-            <li><Link className={isUserButton} to={`/edit/${song.id}`}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></Link></li>
+            <li><a className={isUserButton} onClick={ handleDelete.bind(this) }><i className="fa fa-times" aria-hidden="true"></i></a></li>
+            <li><Link className={isUserButton} to={`/edit/${song.id}`}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></Link></li>
           </div>
           <li className="audio-player-html">
             <audio controls>

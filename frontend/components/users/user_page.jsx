@@ -23,18 +23,26 @@ class userPage extends React.Component {
 
     if (!user) return null;
 
+    let editUser = (this.props.currentUser.username === user.username) ? 
+    (<Link to={`/users/${user.username}/edit`}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></Link>)
+    :
+    (<div></div>);
+
     return (
       <div className= "profile-container">
 
         <section className="user-profile">
           <div className="profile-header">
             <div className="info-section">
-              <div className="profile-image"></div>
+              <img src={user.profile_image} className="profile-image"></img>
               <ul className="user-info">
                 <li>{user.username}</li>
                 <li>{user.name}</li>
                 <li>{user.location}</li>
               </ul>
+            </div>
+            <div className="edit-section">
+              {editUser}
             </div>
           </div>
         </section>

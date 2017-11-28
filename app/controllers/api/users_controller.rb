@@ -22,6 +22,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(username: params[:id])
+    if @user && @user.update_attributes(params.require(:user).permit(:name,:location,:profile_image))
+      render :show
+    elsif !@user
+      render json: ["Couldn't locate user"], status: 400
+    else
+      render json: @user.errors.full_messages, status: 401
+    end
+  end
 
   private
 

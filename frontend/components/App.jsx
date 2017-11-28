@@ -7,8 +7,9 @@ import SongFormContainer from './songs/song_form_container';
 import UserPageContainer from './users/user_page_container';
 import PlayerContainer from './player/player_container';
 import SongEditContainer from './songs/song_edit_container';
+import UserEditContainer from './users/edit_user_container';
 import Main from './main_page/main';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 
 
@@ -17,7 +18,10 @@ const App = () => (
         <Route path="/" component={NavbarContainer}/>
         <Route exact path="/" component={Main} />
         <ProtectedRoute exact path="/songs" component={SongsContainer} />
-        <ProtectedRoute exact path="/users/:username" component={UserPageContainer}/>
+        <Switch>
+          <ProtectedRoute exact path="/users/:username/edit" component={UserEditContainer}/>
+          <ProtectedRoute exact path="/users/:username" component={UserPageContainer}/>
+        </Switch>
         <ProtectedRoute exact path="/edit/:songId" component={SongEditContainer}/>
         <ProtectedRoute exact path="/upload" component={SongFormContainer} />
         <AuthRoute exact path='/signup' component={SignupContainer}/>

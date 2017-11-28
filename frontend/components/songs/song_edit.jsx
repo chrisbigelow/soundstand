@@ -69,28 +69,35 @@ class SongEdit extends React.Component {
 
     return (
       <section>
-        <h1>Edit Song</h1>
-        <form className="song-form" onSubmit={this.handleSubmit}>
-          <input 
+        
+        <form className="session-form" onSubmit={this.handleSubmit}>
+          <ul>
+          <li><h1>Edit Song</h1></li>
+          <li><label>Song Title:</label></li>
+          <li><input
+            className="session-inputs"  
             type="text"
             placeholder={song.title}
             onChange={this.update('title')}
-          />
-          <input 
+          /></li>
+          <li><label>Song Description:</label></li>
+          <li><input
+            className="session-inputs" 
             type="text"
             placeholder={song.title}
             onChange={this.update('description')}
-          />
+          /></li>
           
 
-          <label>Song Image:
-          <input
+          <li><label>Song Image:</label></li>
+          <li><input
             type="file"
             onChange={this.fileUpload("image")}
           />
-          </label>
+          </li>
 
-          <button>Update Song</button>
+          <li><button className="session-button sign-up-mod">Update Song</button></li>
+          </ul>
         </form>
       </section>
     );

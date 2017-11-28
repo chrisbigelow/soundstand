@@ -10,7 +10,9 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    width                 : '30%',
+    height                : '50%'
   }
 };
 
@@ -43,9 +45,10 @@ class Main extends React.Component {
       <div className="main">
       <div className="hero-img-container">
         <div className="hero-img"></div>
-        <h1 className="splash-title">Spreading Love through Free Music
-          <button onClick={this.openModal}>Lets Get Started</button>
-        </h1>
+        <ul className="center-this-stuff">
+          <li><h1 className="splash-title">Spreading Love through Free Music</h1></li>
+          <li><button className="splash-button" onClick={this.openModal}>Lets Get Started</button></li>
+        </ul>
       </div>
 
       <Modal
@@ -55,9 +58,11 @@ class Main extends React.Component {
         style={customStyles}
         contentLabel="Sign Up Modal"
        >
-      <div>
-        <SignupContainer />
-        <button onClick={this.closeModal}>close</button>
+      <div className="modal-container">
+        <ul>
+          <li className="x-button"><a onClick={this.closeModal}><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
+          <li className="signup-container"><SignupContainer /></li>
+        </ul>
       </div>
       </Modal>
 

@@ -15,7 +15,7 @@
 .info-section {
   display: flex;
   margin: 60px;
-  width: 500px;
+  width: 100%;
   height: 200px;
 
 }
@@ -56,7 +56,16 @@
   
 }
 
+.user-tracks-left-bar{
+  border: 1px solid;
+  border-color: #c1c1c1;
+  margin: 5px;
+  height: 100%;
+  width: 150px;
+}
+
 .user-tracks {
+  display: flex;
   margin: auto;
   width: 80%;
   background-color: white;

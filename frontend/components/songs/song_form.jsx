@@ -65,36 +65,40 @@ class SongForm extends React.Component {
   render() {
     return (
       <section>
-        <h1>Upload a Song</h1>
-        <form className="song-form" onSubmit={this.handleSubmit}>
-          <input 
-            type="text"
-            value={this.state.title}
-            placeholder="Song Title"
-            onChange={this.update('title')}
-          />
-          <input 
-            type="text"
-            value={this.state.description}
-            placeholder="Song Description"
-            onChange={this.update('description')}
-          />
+        
+        <form className="session-form" onSubmit={this.handleSubmit}>
+          <ul>
+            <li><h1>Upload a Song</h1></li>
+            <li><input 
+              type="text"
+              className="session-inputs" 
+              value={this.state.title}
+              placeholder="Song Title"
+              onChange={this.update('title')}
+            /></li>
+            <li><input 
+              type="text"
+              className="session-inputs" 
+              value={this.state.description}
+              placeholder="Song Description"
+              onChange={this.update('description')}
+            /></li>
+            
+            <li><label>Song:</label></li>
+            <li><input
+              type="file"
+              onChange={this.fileUpload("song")}
+            /></li>
+            
+
+            <li><label>Song Image:</label></li>
+            <li><input
+              type="file"
+              onChange={this.fileUpload("image")}
+            /></li>
           
-          <label>Song:
-          <input
-            type="file"
-            onChange={this.fileUpload("song")}
-          />
-          </label>
-
-          <label>Song Image:
-          <input
-            type="file"
-            onChange={this.fileUpload("image")}
-          />
-          </label>
-
-          <button>Upload Song</button>
+            <li><button className="session-button sign-up-mod">Upload Song</button></li>
+          </ul>
         </form>
       </section>
     );

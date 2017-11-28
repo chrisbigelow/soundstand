@@ -18,8 +18,15 @@
   width: 100%;
 }
 
+.center-this-stuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 .splash-title{
+  display: flex;
   font-size: 36px;
   top: -313px;
   width: 725px;
@@ -35,6 +42,29 @@
   background-color: white;
   padding: 3px;
   border-radius: 5px;
+}
+
+.splash-button{
+  display: flex;
+  font-size: 20px;
+  top: -295px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #e0442c;
+  color: white;
+  border: none;
+}
+
+.splash-button:hover {
+  cursor: pointer;
+  color: #e0442c;
+  background-color: white;
 }
 
 .sample-section{

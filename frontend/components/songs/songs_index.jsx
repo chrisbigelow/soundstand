@@ -13,7 +13,7 @@ class SongsIndex extends React.Component {
   render() {
     const { songs } = this.props;
     return (
-      <div>
+      <div className="song-index-container">
         <ul>
           {
             songs.map(song => (

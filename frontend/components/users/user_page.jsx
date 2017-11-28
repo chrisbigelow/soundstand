@@ -36,9 +36,8 @@ class userPage extends React.Component {
             <div className="info-section">
               <img src={user.profile_image} className="profile-image"></img>
               <ul className="user-info">
-                <li>{user.username}</li>
                 <li>{user.name}</li>
-                <li>{user.location}</li>
+                <li className="page-description">{user.location}</li>
               </ul>
             </div>
             <div className="edit-section">
@@ -47,7 +46,7 @@ class userPage extends React.Component {
           </div>
         </section>
         <section className="user-tracks">
-          <h1>{user.username}'s Tracks</h1>
+          <div className="user-tracks-left-bar"></div>
           <ul>
           {
             songs.map(song => (

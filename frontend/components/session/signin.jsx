@@ -45,25 +45,34 @@ class Signin extends React.Component {
   render () {
     return (
       <div className="session-form">
-        <h2>Sign In</h2>
-        {this.renderErrors()}
-        <form>
-          <label className="form-label">username
-            <input 
-              type="text"
-              value={this.state.username}
-              onChange={this.handleInput("username")}
-            />
-          </label>
-          <label className="form-label">password
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput("password")}
-            />
-          </label>
-          <button onClick={this.handleSubmit}>Sign In</button>
-        </form>
+        <ul>
+            <li><h2>Sign In.</h2></li>
+            <li>{this.renderErrors()}</li>
+            <li>
+            <form>
+              <ul>
+                <li><label className="form-label">Username:</label></li>
+                <li><input
+                    className="session-inputs" 
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.handleInput("username")}
+                  /></li>
+                
+                <li><label className="form-label">Password:</label></li>
+                <li><input
+                    className="session-inputs" 
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleInput("password")}
+                  /></li> 
+                
+                <li><button className="session-button sign-up-mod" onClick={this.handleSubmit}>Sign Up</button></li>
+              </ul>
+            </form>
+            </li>
+          </ul>
+        
       
       </div>
     );

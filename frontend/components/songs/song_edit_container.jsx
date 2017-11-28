@@ -4,7 +4,7 @@ import SongEdit from './song_edit';
 import { updateSong, fetchSong } from '../../actions/song_actions';
 
 const mapStateToProps = (state) => {
-  console.log(state);
+
   return {
     songs: state.entities.songs
   };

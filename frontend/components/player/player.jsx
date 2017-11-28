@@ -35,9 +35,7 @@ class Player extends React.Component {
     let promise = player.play();
     if (promise !== undefined) {
       promise.then(function() {
-      console.log("playing!");
       }).catch(function(error) {
-      console.log(error);
       });
     }
   }
@@ -66,8 +64,8 @@ class Player extends React.Component {
                           <img src={this.props.currentSong.song_image} alt=""></img>
                         </div>
                       </li>
-                      <li>{this.props.currentSong.title}</li>
-                      <li>{this.props.currentSong.artist}</li>
+                      <li>Title: {this.props.currentSong.title}</li>
+                      <li>Artist: {this.props.currentSong.artist}</li>
                     </ul>
                   </div>
               </li>

@@ -19,7 +19,9 @@ export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } 
   return (
     <li>
       <div className="song-container">
-        <img className="album-cover" height="100%" width="auto" src={song.song_image}/>
+        <Link to={`/songs/${song.id}`}>
+          <img className="album-cover" height="100%" width="auto" src={song.song_image}/>
+        </Link>
         <ul>
           <li className ="song-info">
             <ul>

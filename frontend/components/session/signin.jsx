@@ -47,7 +47,7 @@ class Signin extends React.Component {
       <div className="session-form">
         <ul>
             <li><h2>Sign In.</h2></li>
-            <li>{this.renderErrors()}</li>
+            <li className="rendered-errors">{this.renderErrors()}</li>
             <li>
             <form>
               <ul>

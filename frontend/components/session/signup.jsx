@@ -46,7 +46,7 @@ class Signup extends React.Component {
       <div className="session-form">
         <ul>
             <li><h2>Sign up and start listening today.</h2></li>
-            <li>{this.renderErrors()}</li>
+            <li className="rendered-errors">{this.renderErrors()}</li>
             <li>
             <form>
               <ul>

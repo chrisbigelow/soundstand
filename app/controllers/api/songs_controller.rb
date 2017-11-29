@@ -15,6 +15,8 @@ class Api::SongsController < ApplicationController
   def update
 
     @song = Song.find_by(id: params[:id])
+    params[:song][:title] = @song.title if params[:song][:title] == "undefined"
+    params[:song][:description] = @song.description if params[:song][:description] == "undefined"
     params[:song][:song_image] = @song.song_image if params[:song][:song_image] == "undefined"
     if @song && @song.update_attributes(params.require(:song).permit(:title, :description, :song_image))
       render :show

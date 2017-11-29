@@ -12,6 +12,7 @@ class SongEdit extends React.Component {
 
   componentWillMount() {
     this.props.fetchSong(this.props.match.params.songId);
+    this.setState({title: undefined, description: undefined});
   }
 
   componentWillReceiveProps(nextProps) {

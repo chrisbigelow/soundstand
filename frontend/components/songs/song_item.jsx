@@ -22,12 +22,11 @@ export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } 
         <Link to={`/songs/${song.id}`}>
           <img className="album-cover" height="100%" width="auto" src={song.song_image}/>
         </Link>
-        <ul>
+        <ul className="song-info-list">
           <li className ="song-info">
             <ul>
-              <li>{song.title}</li>
-              <li>{song.description}</li>
-              <li>{song.artist}</li>
+              <li className="song-item-title">{song.title}</li>
+              <Link to={`/users/${song.artist}`}><li className="artist-link">{song.artist}</li></Link>
             </ul>
           </li>
           <li><a className="play-button" onClick={ handleSongPlay.bind(this) }><i className="fa fa-play" aria-hidden="true"></i></a></li>

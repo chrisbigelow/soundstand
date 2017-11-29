@@ -64,8 +64,12 @@ class Player extends React.Component {
                           <img src={this.props.currentSong.song_image} alt=""></img>
                         </div>
                       </li>
-                      <li>Title: {this.props.currentSong.title}</li>
-                      <li>Artist: {this.props.currentSong.artist}</li>
+                      <li>
+                        <ul className="title-artist-player">
+                          <li>Title: {this.props.currentSong.title}</li>
+                          <li>Artist: {this.props.currentSong.artist}</li>
+                        </ul>
+                      </li>
                     </ul>
                   </div>
               </li>

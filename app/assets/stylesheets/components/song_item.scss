@@ -2,11 +2,11 @@
 
 
 .song-container {
-  border: 0.1px solid;
+  border-top: 0.1px solid;
+  border-bottom: 0.1px solid;
   display: flex;
-  margin: 5px;
   border-color: #c1c1c1;
-  max-width: 600px;
+  width: 100%;
   padding: 20px;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .song-info {
-  margin-bottom: 13px;
+  margin-bottom: 28px;
 }
 
 .play-button {

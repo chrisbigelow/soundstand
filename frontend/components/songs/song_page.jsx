@@ -52,7 +52,7 @@ class SongPage extends React.Component {
                 <li>
                   <ul className="user-info">
                     <li>{song.title}</li>
-                    <li className="page-description">{song.description}</li>
+                    <li className="page-description">{song.artist}</li>
                   </ul>
                 </li>
                 <li className="button-page-box">
@@ -66,7 +66,9 @@ class SongPage extends React.Component {
           </div>
         </section>
         <section className="comment-section">
-
+          <div className="song-description">
+            <p>Description: {song.description}</p>
+          </div>
         </section>
         
       </div>

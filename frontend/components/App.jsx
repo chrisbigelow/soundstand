@@ -9,7 +9,7 @@ import SongPageContainer from './songs/song_page_container';
 import PlayerContainer from './player/player_container';
 import SongEditContainer from './songs/song_edit_container';
 import UserEditContainer from './users/edit_user_container';
-import Main from './main_page/main';
+import MainContainer from './main_page/main_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 
@@ -17,7 +17,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 const App = () => (
     <div className="app-container">
         <Route path="/" component={NavbarContainer}/>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" component={MainContainer} />
         <Switch>
         <ProtectedRoute exact path="/songs" component={SongsContainer} />
         <ProtectedRoute exact path="/songs/:songId" component={SongPageContainer} />

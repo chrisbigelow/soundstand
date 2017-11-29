@@ -46,7 +46,7 @@ class userPage extends React.Component {
           </div>
         </section>
         <section className="user-tracks">
-          <div className="user-tracks-left-bar"></div>
+          {/* <div className="user-tracks-left-bar"></div> */}
           <ul>
           {
             songs.map(song => (
@@ -55,6 +55,7 @@ class userPage extends React.Component {
                 song = {song}
                 deleteSong={this.props.deleteSong}
                 currentUser={this.props.currentUser}
+                addSongToQueue={this.props.addSongToQueue}
               />
             ))
           }

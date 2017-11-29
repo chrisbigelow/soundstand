@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class Signup extends React.Component {
   constructor(props){
@@ -23,7 +24,8 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const userParams = this.state;
-    this.props.signup({user: userParams}).then(() => this.props.history.push('/songs'));
+    console.log(this.props);
+    this.props.signup({user: userParams}).then(() => this.props.props.history.push('/songs'));
 
   }
 

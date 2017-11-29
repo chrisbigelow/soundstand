@@ -12,6 +12,7 @@ class EditUser extends React.Component {
 
   componentWillMount() {
     this.props.fetchUser(this.props.match.params.username);
+    this.setState({ name: undefined, location: undefined})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -65,30 +66,34 @@ class EditUser extends React.Component {
 
     if (!user) return null;
 
+
     return (
       <section>
-        <h1>Edit User Profile</h1>
-        <form className="user-update" onSubmit={this.handleSubmit}>
-          <input 
-            type="text"
-            placeholder={user.name}
-            onChange={this.update('name')}
-          />
-          <input 
-            type="text"
-            placeholder={user.location}
-            onChange={this.update('location')}
-          />
-          
-
-          <label>User Image:
-          <input
+        
+        <form className="session-form" onSubmit={this.handleSubmit}>
+          <ul>
+            <li><h1>Edit User Profile</h1></li>
+            <li><label>Name:</label></li>
+            <li><input
+              className="session-inputs" 
+              type="text"
+              placeholder={user.name}
+              onChange={this.update('name')}
+            /></li>
+            <li><input
+              className="session-inputs"  
+              type="text"
+              placeholder={user.location}
+              onChange={this.update('location')}
+            /></li>
+            <li><label>Location:</label></li>
+            <li><label>User Image:</label></li>
+            <li><input
             type="file"
             onChange={this.fileUpload("profile")}
-          />
-          </label>
-
-          <button>Update User Profile</button>
+            /></li>
+            <li><button className="session-button sign-up-mod">Update User Profile</button></li>
+          </ul>
         </form>
       </section>
     );

@@ -14,6 +14,11 @@ class Song < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :song_id,
+    class_name: :Comment
+
   has_attached_file :song_image, styles: {
       thumb: '100x100>',
       square: '200x200#',

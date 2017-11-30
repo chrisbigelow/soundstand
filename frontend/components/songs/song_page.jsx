@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import getImageColor from '../../util/image_color';
+import WaveSurfer from 'wavesurfer';
+import CommentForm from '../comments/comment_form';
+import CommentIndex from '../comments/comment_index';
 
 class SongPage extends React.Component {
   constructor(props) {
@@ -11,6 +14,7 @@ class SongPage extends React.Component {
 
   componentWillMount() {
     this.props.fetchSong(this.props.match.params.songId);
+    // this.props.getComments(this.props.currentUser.id);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,6 +32,14 @@ class SongPage extends React.Component {
   handleSongPlay(e){
     e.preventDefault();
     this.props.addSongToQueue(this.props.song);
+    var wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: 'black',
+      progressColor: 'purple',
+      barWidth: '2'
+    });
+
+    wavesurfer.load('http://res.cloudinary.com/dmzulpcul/video/upload/v1511938004/05_None_Of_It_bzco6h.mp3');
   }
 
   render(){
@@ -69,6 +81,8 @@ class SongPage extends React.Component {
           <div className="song-description">
             <p>Description: {song.description}</p>
           </div>
+          <CommentForm songId={song.id} currentUser={this.props.currentUser} createComment={this.props.createComment}/>
+          <CommentIndex currentUser={this.props.currentUser} comments={song.comments} />
         </section>
         
       </div>

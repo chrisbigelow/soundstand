@@ -122,9 +122,9 @@ class Main extends React.Component {
         </div>
       </section>
       <footer className="footer">
-          <i className="fa fa-male footer-icons" aria-hidden="true"></i>
-          <i className="fa fa-github footer-icons" aria-hidden="true"></i>
-          <i className="fa fa-envelope footer-icons" aria-hidden="true"></i>
+          <a href="http://chbigelow.com/"><i className="fa fa-male footer-icons" aria-hidden="true"></i></a>
+          <a href="https://github.com/chrisbigelow"><i className="fa fa-github footer-icons" aria-hidden="true"></i></a>
+          <a href="mailto:chris.bigelow@outlook.com"><i className="fa fa-envelope footer-icons" aria-hidden="true"></i></a>
           <p>Copyright © 2017 Chris Bigelow</p>
       </footer>
     </div>

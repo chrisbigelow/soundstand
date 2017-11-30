@@ -34,11 +34,11 @@ export default ( { song, deleteSong, currentUser, addSongToQueue, currentSong } 
             <li><a className={isUserButton} onClick={ handleDelete.bind(this) }><i className="fa fa-times" aria-hidden="true"></i></a></li>
             <li><Link className={isUserButton} to={`/edit/${song.id}`}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></Link></li>
           </div>
-          <li className="audio-player-html">
+          {/* <li className="audio-player-html">
             <audio controls>
               <source src={song.song_file} type="audio/mpeg"/>
             </audio>
-          </li>
+          </li> */}
         </ul>
       </div>
     </li>

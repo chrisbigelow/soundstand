@@ -1,0 +1,63 @@
+
+.comment-wrapper {
+  margin: 10px;
+  display: block;
+  height: 40px;
+  box-sizing: border-box;
+  overflow: visible;
+  padding: 5px;
+  background: #f2f2f2;
+  border: 1px solid #e5e5e5;
+  transition: opacity 300ms,height 300ms,margin 300ms;
+}
+
+
+.comment-input {
+  border-radius: 4px;
+  height: 27px;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  padding: 0 9px;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  font-family: inherit;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.comment-form {
+  width: 30%;
+
+}
+
+.comment-button {
+  margin: 10px;
+}
+
+.comments-index {
+  list-style: none;
+  margin: 0;
+
+}
+
+.comment-body {
+  position: relative;
+  padding: 10px 10px 10px 0;
+  display: block;
+  color: #333;
+  margin-left: 10px;
+  border-top: 0.1px solid;
+  border-bottom: 0.1px solid;
+  border-color: rgb(182, 182, 182);
+  width: 30%;
+}
+
+.comment-user {
+  color: rgb(182, 182, 182);
+  size: 2px;
+}
+

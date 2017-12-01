@@ -10,6 +10,7 @@ class SongPage extends React.Component {
     super(props);
     this.handleSongPlay = this.handleSongPlay.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.mounted = false;
   }
 
   componentWillMount() {
@@ -34,14 +35,19 @@ class SongPage extends React.Component {
   handleSongPlay(e){
     e.preventDefault();
     this.props.addSongToQueue(this.props.song);
-    var wavesurfer = WaveSurfer.create({
-      container: '#waveform',
-      waveColor: 'black',
-      progressColor: 'purple',
-      barWidth: '2'
-    });
+    let elementExists = document.getElementById("waveform");
+    if (!this.mounted) {
+      var wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: 'black',
+        progressColor: 'purple',
+        barWidth: '2'
+      });
 
-    wavesurfer.load('http://res.cloudinary.com/dmzulpcul/video/upload/v1511938004/05_None_Of_It_bzco6h.mp3');
+      wavesurfer.load('http://res.cloudinary.com/dmzulpcul/video/upload/v1511938004/05_None_Of_It_bzco6h.mp3');
+
+      this.mounted = true;
+    }
   }
 
   render(){
@@ -49,8 +55,10 @@ class SongPage extends React.Component {
 
     if (!song) return null;
 
+    let waveForm = ( <div className="wavform" id="waveform"></div> );
+
     let editUser = (this.props.currentUser.id === song.user_id) ? 
-    (<Link to={`/edit/${song.id}`}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></Link>)
+    (<Link to={`/edit/${song.id}`}><i className="fa fa-pencil-square-o user-edit-icon" aria-hidden="true"></i></Link>)
     :
     (<div></div>);
 
@@ -72,21 +80,29 @@ class SongPage extends React.Component {
                   </ul>
                 </li>
                 <li className="button-page-box">
-                  <a className="play-button play-button-on-show" onClick={ this.handleSongPlay }><i className="fa fa-play" aria-hidden="true"></i></a>
+                  <ul className="play-and-waveform">
+                    <li><a className="play-button play-button-on-show" onClick={ this.handleSongPlay }><i className="fa fa-play" aria-hidden="true"></i></a></li>
+                  </ul>
                 </li>
               </ul>
             </div>
             <div className="edit-section">
-              {editUser}
+              <ul>
+              <li>{editUser}</li>
+              <li>{waveForm}</li>
+              </ul>
             </div>
           </div>
         </section>
         <section className="comment-section">
           <div className="song-description">
-            <p>Description: {song.description}</p>
+            <label>Song Description:</label>
+            <p className="description-text"> {song.description}</p>
           </div>
-          <CommentFormContainer songId={song.id}/>
-          <CommentIndex currentUser={this.props.currentUser} comments={this.props.comments} />
+          <ul className= "comments-list-and-form">
+            <li><CommentFormContainer songId={song.id}/></li>
+            <li><CommentIndex currentUser={this.props.currentUser} comments={this.props.comments} /></li>
+          </ul>
         </section>
         
       </div>

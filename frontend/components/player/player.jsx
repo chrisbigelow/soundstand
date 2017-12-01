@@ -16,7 +16,7 @@ class Player extends React.Component {
   }
 
   handleEnded(e){
-    this.playNextSong();
+    this.props.playNextSong();
   }
 
   menuClick() {

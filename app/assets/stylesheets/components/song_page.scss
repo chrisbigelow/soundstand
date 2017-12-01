@@ -12,17 +12,17 @@
 .button-page-box {
   width: 100%;
   height: 100%;
-  margin-top: 60px;
+  margin-top: 35px;
+  width: fit-content;
 }
 
 a.play-button-on-show {
-  margin: 10px;
-  margin-left: 48px;
-  margin-top: 5%;
-  padding: 23px;
-  border-radius: 16%;
-  font-size: 45px;
-  padding-left: 30px;
+    margin-left: 48px;
+    padding: 13px;
+    padding-left: 2px;
+    border-radius: 88%;
+    font-size: 45px;
+    padding-left: 25px;
 }
 
 .page-description {
@@ -36,14 +36,57 @@ a.play-button-on-show {
   position: relative;
   background-color: rgba(0,0,0,.8);
   -webkit-box-decoration-break: clone;
+  width: fit-content;
 }
 
-.comment-section{
-  margin-right: 10%;
-  margin-left: 10%;
+.song-description {
+  padding: 10px;
+  min-width: 25%;
+}
+
+.song-description label{
+  font-size: 12px;
+}
+
+
+.description-text {
+  border: 0.5px solid;
+  border-color: #e2e0e0;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.comment-section {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 80%;
   background-color: white;
+  min-width: 1200px;
+}
+
+.comments-list-and-form {
+  width: 100%;
 }
 
 .user-tracks ul {
   width: 100%
 }
+
+.comment-index {
+  margin-bottom: 100px;
+}
+
+.play-and-waveform {
+  width: fit-content;
+}
+
+.play-and-waveform {
+}
+
+.info-section {
+  width: 100%;
+}
+
+
+

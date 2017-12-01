@@ -78,14 +78,14 @@ class SongEdit extends React.Component {
           <li><input
             className="session-inputs"  
             type="text"
-            value={song.title}
+            defaultValue={song.title}
             onChange={this.update('title')}
           /></li>
           <li><label>Song Description:</label></li>
           <li><input
             className="session-inputs" 
             type="text"
-            value={song.title}
+            defaultValue={song.title}
             onChange={this.update('description')}
           /></li>
           

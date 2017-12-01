@@ -31,7 +31,7 @@ class CommentForm extends React.Component {
             <li>
             <form>
               <ul>
-                <li><label className="form-label"></label></li>
+                <li><label className="form-label">{this.props.errors}</label></li>
                 <li className= "comment-wrapper"><input
                     className="comment-input" 
                     type="text"

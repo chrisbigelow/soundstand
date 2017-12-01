@@ -10,12 +10,13 @@
   height: 300px;
   background-size: 100% auto;
   background-repeat: no-repeat;
+  min-width: 1200px;
 }
 
 .info-section {
   display: flex;
   margin: 60px;
-  width: 100%;
+  width: 200%;
   height: 200px;
 
 }
@@ -37,7 +38,6 @@
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center;
 }
 
 .user-info {
@@ -45,6 +45,7 @@
   margin-top: 0px;
   margin-left: 48px;
   color: white;
+  width: 100%;
 }
 
 .user-info li:first-child{
@@ -69,8 +70,9 @@
   margin: auto;
   width: 80%;
   background-color: white;
-  height: 800px;
+  min-height: 800px;
   background-size: 100% auto;
+  height: fit-content;
 }
 
 .enabled {
@@ -85,3 +87,8 @@
   color: white;
   font-size: 25px;
 }
+
+.wavform {
+  align-content: center;
+}
+

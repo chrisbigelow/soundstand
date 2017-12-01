@@ -67,7 +67,7 @@ class Signin extends React.Component {
                     onChange={this.handleInput("password")}
                   /></li> 
                 
-                <li><button className="session-button sign-up-mod" onClick={this.handleSubmit}>Sign Up</button></li>
+                <li><button className="session-button sign-up-mod" onClick={this.handleSubmit}>Sign In</button></li>
               </ul>
             </form>
             </li>

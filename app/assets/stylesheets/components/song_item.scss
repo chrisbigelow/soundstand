@@ -61,3 +61,32 @@
 .fa-times:hover {
   cursor: pointer;
 }
+
+.song-item-title {
+  margin-top: 4px;
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 2px 7px 3px;
+  display: flex;
+  position: relative;
+  background-color: rgba(29, 28, 28, 0.747);
+  -webkit-box-decoration-break: clone;
+  width: fit-content;
+}
+
+.song-info a {
+  margin-top: 4px;
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 2px 7px 3px;
+  display: flex;
+  position: relative;
+  background-color: rgba(29, 28, 28, 0.747);
+  -webkit-box-decoration-break: clone;
+  width: fit-content;
+  text-decoration: none;
+}

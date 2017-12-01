@@ -101,7 +101,7 @@ class SongPage extends React.Component {
           </div>
           <ul className= "comments-list-and-form">
             <li><CommentFormContainer songId={song.id}/></li>
-            <li><CommentIndex currentUser={this.props.currentUser} comments={this.props.comments} /></li>
+            <li><CommentIndex deleteComment={this.props.deleteComment} currentUser={this.props.currentUser} comments={this.props.comments} /></li>
           </ul>
         </section>
         

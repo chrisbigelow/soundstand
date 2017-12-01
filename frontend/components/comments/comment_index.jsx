@@ -1,3 +1,5 @@
+import CommentItem from './comment_item';
+
 import React from 'react';
 
 class CommentsIndex extends React.Component {
@@ -5,21 +7,17 @@ class CommentsIndex extends React.Component {
     super(props);
   }
 
+
   render() {
 
     if (!this.props.comments) return null;
-
-
 
     return (
       <div className="comments-index-container">
         <ul className="comment-index">
           {
             this.props.comments.map(comment => (
-              <div key={`song${comment.id}`} className="comment-body">
-                <p className="comment-user">{comment.username} said:</p>
-                <p className="comment-text">{comment.body}</p>
-              </div>
+              < CommentItem key={`song${comment.id}`} deleteComment={this.props.deleteComment} comment={comment} currentUser={this.props.currentUser}/>
             ))
           }
         </ul>

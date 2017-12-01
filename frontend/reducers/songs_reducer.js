@@ -10,9 +10,9 @@ const songReducer = (state = { }, action) => {
     const song = action.payload;
     return merge({}, {[song.id]: song});
     case REMOVE_SONG:
-      let newState = merge({}, state);
-      delete newState[`${action.songId.id}`];
-      return newState;
+        let newState = merge({}, state);
+        delete newState[`${action.songId.id}`];
+        return newState;
     default:
       return state;
   }

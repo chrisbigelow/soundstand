@@ -68,8 +68,9 @@ class Main extends React.Component {
       </div>
       </Modal>
 
-
+      
       <section className="sample-section">
+        <h1 className="header-sample">Sample Tracks</h1>
         <div className="song-square a">
             <audio controls>
               <source src="http://res.cloudinary.com/dmzulpcul/video/upload/v1511938103/13_Smash_Your_Office_kijurr.mp3" type="audio/mpeg"/>

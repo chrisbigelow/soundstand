@@ -15,9 +15,9 @@ export const receiveComment = comment => ({
   comment
 });
 
-export const removeComment = id => ({
+export const removeComment = commentId => ({
   type: REMOVE_COMMENT,
-  id
+  commentId
 });
 
 export const receiveCommentErrors = errors => {

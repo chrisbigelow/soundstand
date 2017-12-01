@@ -55,10 +55,15 @@
   border-bottom: 0.1px solid;
   border-color: rgb(182, 182, 182);
   width: 65%;
+  font-size: 20px;
 }
 
 .comment-user {
   color: rgb(182, 182, 182);
-  size: 2px;
+  font-size: 12px;
+}
+
+.delete-x-comments {
+  text-align: right;
 }
 

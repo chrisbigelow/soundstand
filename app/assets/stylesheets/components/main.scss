@@ -93,9 +93,18 @@
 }
 
 .sample-section {
+  font-weight: lighter;
+  text-transform: uppercase;
   width: 850px; 
   margin: auto;
   margin-bottom: 150px;
+}
+
+.header-sample {
+  display: flex;
+  margin-right:30%;
+  margin-left: 30%;
+  font-size: 20px;
 }
 
 

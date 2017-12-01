@@ -23,7 +23,7 @@ class Api::CommentsController < ApplicationController
       if @comment && @comment.user_id == current_user.id
         destroyed_id = @comment.id
         @comment.destroy
-        render json: {id: destroyed_id}
+        render json: destroyed_id
       else
         render json: ["Couldn't locate track"]
       end

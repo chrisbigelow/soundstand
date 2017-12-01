@@ -2,7 +2,7 @@
 
 class Api::SongsController < ApplicationController
 
-  # before_action :require_login
+  before_action :require_login
 
   def create
     @song = Song.new(song_params)

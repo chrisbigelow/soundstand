@@ -4,7 +4,7 @@ import SongPage from './song_page';
 
 import { updateSong, deleteSong, fetchSong } from '../../actions/song_actions';
 import { addSongToQueue } from '../../actions/player_actions';
-import { createComment, fetchComments } from '../../actions/comment_actions';
+import { createComment, fetchComments, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   updateSong: (id) => dispatch(updateSong(id)),
   addSongToQueue: (id) => dispatch(addSongToQueue(id)),
   createComment: (comment) => dispatch(createComment(comment)),
-  fetchComments: (userId) => dispatch(fetchComments(userId))
+  fetchComments: (userId) => dispatch(fetchComments(userId)),
+  deleteComment: (commentId) => dispatch(deleteComment(commentId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongPage);

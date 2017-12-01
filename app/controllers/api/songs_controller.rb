@@ -7,7 +7,6 @@ class Api::SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     @song.user_id = current_user.id
-    dubugger
     if @song.save
       render :show
     else

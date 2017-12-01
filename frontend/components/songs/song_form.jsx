@@ -109,7 +109,7 @@ class SongForm extends React.Component {
               onChange={this.update('description')}
             /></li>
             
-            <li><label>Song:</label></li>
+            <li><label>Song File:</label></li>
             <li><input
               type="file"
               onChange={this.fileUpload("song")}

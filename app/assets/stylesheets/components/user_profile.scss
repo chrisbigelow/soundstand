@@ -10,7 +10,7 @@
   height: 300px;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  min-width: 1200px;
+  min-width:1200px;
 }
 
 .info-section {
@@ -33,8 +33,7 @@
 }
 
 .profile-image {
-    display: flex;
-    width: 200px;
+    min-width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
@@ -74,6 +73,7 @@
   background-size: 100% auto;
   height: fit-content;
   margin-bottom: 35px;
+  min-width: 1200px;
 }
 
 .enabled {

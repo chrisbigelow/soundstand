@@ -2,7 +2,7 @@ class Song < ApplicationRecord
 
   validates :title, :user_id, presence: true
   validates_attachment :song_image,
-    content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+    content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
     size: { less_than: 5.megabytes }
   validates_attachment :song, presence: true,
     # attachment audio type

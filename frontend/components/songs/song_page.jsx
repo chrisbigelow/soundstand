@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import getImageColor from '../../util/image_color';
 import WaveSurfer from 'wavesurfer';
 import CommentFormContainer from '../comments/comment_form_container';
-import CommentIndex from '../comments/comment_index';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class SongPage extends React.Component {
   constructor(props) {
@@ -14,15 +14,15 @@ class SongPage extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchSong(this.props.match.params.songId)
-    .then((res) => this.props.fetchComments(res.payload.id));
+    this.props.fetchSong(this.props.match.params.songId);
+    // .then((res) => this.props.fetchComments(res.payload.id));
     
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.songId !== nextProps.match.params.songId) {
-      this.props.fetchSong(nextProps.match.params.songId)
-      .then((res) => this.props.fetchComments(res.payload.id));
+      this.props.fetchSong(nextProps.match.params.songId);
+      // .then((res) => this.props.fetchComments(res.payload.id));
     }
   }
 
@@ -101,7 +101,7 @@ class SongPage extends React.Component {
           </div>
           <ul className= "comments-list-and-form">
             <li><CommentFormContainer songId={song.id}/></li>
-            <li><CommentIndex deleteComment={this.props.deleteComment} currentUser={this.props.currentUser} comments={this.props.comments} /></li>
+            <li><CommentIndexContainer songId={song.id} /></li>
           </ul>
         </section>
         

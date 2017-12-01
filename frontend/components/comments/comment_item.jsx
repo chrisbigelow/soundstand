@@ -20,10 +20,12 @@ class CommentItem extends React.Component {
 
     if (!comment) return null;
 
+    const isUserButton = (this.props.currentUser.username === comment.username ) ? "enabled" : "disabled";
+
     return (
       <div className="comment-body">
         <ul>
-          <li className="delete-x-comments"><a className="enabled" onClick={ this.handleDelete.bind(this) }><i className="fa fa-times" aria-hidden="true"></i></a></li>
+          <li className="delete-x-comments"><a className={isUserButton} onClick={ this.handleDelete.bind(this) }><i className="fa fa-times" aria-hidden="true"></i></a></li>
           <li><p className="comment-user">{comment.username} said:</p></li>
           <li><p className="comment-text">{comment.body}</p></li>
         </ul>

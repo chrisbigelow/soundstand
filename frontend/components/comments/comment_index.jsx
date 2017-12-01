@@ -7,6 +7,10 @@ class CommentsIndex extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.fetchComments(this.props.songId);
+  }
+
 
   render() {
 
@@ -16,7 +20,7 @@ class CommentsIndex extends React.Component {
       <div className="comments-index-container">
         <ul className="comment-index">
           {
-            this.props.comments.map(comment => (
+            this.props.comments.reverse().map(comment => (
               < CommentItem key={`song${comment.id}`} deleteComment={this.props.deleteComment} comment={comment} currentUser={this.props.currentUser}/>
             ))
           }

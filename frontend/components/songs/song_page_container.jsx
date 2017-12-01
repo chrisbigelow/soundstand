@@ -9,8 +9,8 @@ import { createComment, fetchComments, deleteComment } from '../../actions/comme
 const mapStateToProps = (state, ownProps) => {
   return {
   song: Object.values(state.entities.songs)[0],
-  currentUser: state.session.currentUser,
-  comments: Object.values(state.entities.comments)
+  currentUser: state.session.currentUser
+  // comments: Object.values(state.entities.comments)
   };
 };
 
@@ -19,10 +19,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchSong: (id) => dispatch(fetchSong(id)),
   deleteSong: (id) => dispatch(deleteSong(id)),
   updateSong: (id) => dispatch(updateSong(id)),
-  addSongToQueue: (id) => dispatch(addSongToQueue(id)),
-  createComment: (comment) => dispatch(createComment(comment)),
-  fetchComments: (userId) => dispatch(fetchComments(userId)),
-  deleteComment: (commentId) => dispatch(deleteComment(commentId))
+  addSongToQueue: (id) => dispatch(addSongToQueue(id))
+  // createComment: (comment) => dispatch(createComment(comment)),
+  // fetchComments: (userId) => dispatch(fetchComments(userId)),
+  // deleteComment: (commentId) => dispatch(deleteComment(commentId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongPage);

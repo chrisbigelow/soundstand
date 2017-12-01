@@ -45,7 +45,6 @@ class SongForm extends React.Component {
 
 
   renderErrors() {
-    console.log(this.props.errors);
     if (this.props.errors) {
       return(
         <ul>

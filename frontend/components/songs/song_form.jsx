@@ -44,19 +44,19 @@ class SongForm extends React.Component {
   }
 
 
-  renderErrors() {
-    if (this.props.errors) {
-      return(
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    }
-  }
+  // renderErrors() {
+  //   if (this.props.errors) {
+  //     return(
+  //       <ul>
+  //         {this.props.errors.map((error, i) => (
+  //           <li key={`error-${i}`}>
+  //             {error}
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     );
+  //   }
+  // }
 
   fileUpload(field){
     return (e) => {
@@ -92,7 +92,7 @@ class SongForm extends React.Component {
         <form className="session-form" onSubmit={this.handleSubmit}>
           <ul>
             <li><h1>Upload a Song</h1></li>
-            <li className="rendered-errors">{this.renderErrors()}</li>
+            {/* <li className="rendered-errors">{this.renderErrors()}</li> */}
             <li><input 
               type="text"
               className="session-inputs" 

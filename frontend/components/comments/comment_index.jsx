@@ -9,6 +9,8 @@ class CommentsIndex extends React.Component {
 
     if (!this.props.comments) return null;
 
+
+
     return (
       <div className="comments-index-container">
         <ul className="comment-index">

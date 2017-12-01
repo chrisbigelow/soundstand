@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import getImageColor from '../../util/image_color';
 import WaveSurfer from 'wavesurfer';
-import CommentForm from '../comments/comment_form';
+import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndex from '../comments/comment_index';
 
 class SongPage extends React.Component {
@@ -13,13 +13,15 @@ class SongPage extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchSong(this.props.match.params.songId);
-    // this.props.getComments(this.props.currentUser.id);
+    this.props.fetchSong(this.props.match.params.songId)
+    .then((res) => this.props.fetchComments(res.payload.id));
+    
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.songId !== nextProps.match.params.songId) {
-      this.props.fetchSong(nextProps.match.params.songId);
+      this.props.fetchSong(nextProps.match.params.songId)
+      .then((res) => this.props.fetchComments(res.payload.id));
     }
   }
 
@@ -59,7 +61,9 @@ class SongPage extends React.Component {
         <section className="user-profile">
           <div className="profile-header">
             <div className="info-section">
-              <img src={song.song_image} className="song-image-profile"></img>
+              <div className="song-image-profile-container">
+                <img src={song.song_image} className="song-image-profile"></img>
+              </div>
               <ul>
                 <li>
                   <ul className="user-info">
@@ -81,8 +85,8 @@ class SongPage extends React.Component {
           <div className="song-description">
             <p>Description: {song.description}</p>
           </div>
-          <CommentForm songId={song.id} currentUser={this.props.currentUser} createComment={this.props.createComment}/>
-          <CommentIndex currentUser={this.props.currentUser} comments={song.comments} />
+          <CommentFormContainer songId={song.id}/>
+          <CommentIndex currentUser={this.props.currentUser} comments={this.props.comments} />
         </section>
         
       </div>

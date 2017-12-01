@@ -42,11 +42,10 @@ button.sign-up-mod:hover {
 }
 
 .session-inputs{
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 2px solid;
-  font-size: 30px;
+  border: 0.5px solid;
+  font-size: 23px;
+  font-weight: lighter;
 }
 
 .rendered-errors {

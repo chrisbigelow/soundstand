@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { withRouter } from 'react-router-dom';
+import LoadingIcon from '../loading/loading';
 
 class SongForm extends React.Component {
 
@@ -9,10 +10,10 @@ class SongForm extends React.Component {
     this.state = {
       title: '',
       description: '',
-      imageFile: undefined,
-      imageURL: undefined,
-      songURL: undefined,
-      songFile: undefined
+      imageFile: '',
+      imageURL: '',
+      songURL: '',
+      songFile: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.fileUpload = this.fileUpload.bind(this);
@@ -20,6 +21,8 @@ class SongForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    this.props.startLoad();
 
     const formData = new FormData();
 
@@ -38,6 +41,22 @@ class SongForm extends React.Component {
 
   update(property) {
     return event => this.setState({ [property]: event.target.value });
+  }
+
+
+  renderErrors() {
+    console.log(this.props.errors);
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   fileUpload(field){
@@ -64,11 +83,17 @@ class SongForm extends React.Component {
 
   render() {
     return (
+      this.props.loading ?
+      <ul>
+        <li><LoadingIcon /></li> 
+      </ul>
+      :
       <section>
         
         <form className="session-form" onSubmit={this.handleSubmit}>
           <ul>
             <li><h1>Upload a Song</h1></li>
+            <li className="rendered-errors">{this.renderErrors()}</li>
             <li><input 
               type="text"
               className="session-inputs" 

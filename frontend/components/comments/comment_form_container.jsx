@@ -1,18 +1,17 @@
-// import { connect } from 'react-redux';
-// import { createComment } from '../../actions/comment_actions';
-// import CommentForm from './comment_form';
+import { connect } from 'react-redux';
+import { createComment } from '../../actions/comment_actions';
+import CommentForm from './comment_form';
+import React from 'react';
 
-// const mapStateToProps = (state) => (
-//   { 
-//   comments: Array.from(state.entities.comments),
-//   currentUser: state.session.currentUser
-//   }
-// );
+const mapStateToProps = (state) => {
+return { 
+  currentUser: state.session.currentUser };
+};
 
-// const mapDispatchToProps = (dispatch) => (
-//    { 
-//     createComment: (comment) => dispatch(createComment(comment))
-//    }
-// );
+const mapDispatchToProps = (dispatch) => (
+   { 
+    createComment: (comment, songId) => dispatch(createComment(comment, songId))
+   }
+);
 
-// export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);

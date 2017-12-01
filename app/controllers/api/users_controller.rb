@@ -14,6 +14,9 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.name = "add name"
+    @user.location = "add location"
+    @user.profile_image = "http://res.cloudinary.com/dmzulpcul/image/upload/v1512079972/profile-placeholder_gvcpsn.jpg"
     if @user.save
       login(@user)
       render 'api/users/show'

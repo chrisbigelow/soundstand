@@ -2,19 +2,25 @@ import { connect } from 'react-redux';
 
 import SongForm from './song_form';
 import { createSong } from '../../actions/song_actions';
+import { startLoad } from '../../actions/loading_actions';
 
-// const mapStateToProps = ({})
+const mapStateToProps = state => {
+  console.log(state.errors);
+  return{
+    errors: state.errors.songForm,
+    loading: state.errors.loading.formLoading
+  };
+};
 
-//lets use this for errors, ok?
-// and remember chris, you are doing great:)
 
 const mapDisptachToProps = (dispatch) => (
   {
-  createSong: (song) => dispatch(createSong(song))
+  createSong: (song) => dispatch(createSong(song)),
+  startLoad: () => dispatch(startLoad())
   }
 );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDisptachToProps
 )(SongForm);

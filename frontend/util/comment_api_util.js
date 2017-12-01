@@ -1,15 +1,15 @@
-// export const getComments = (songId) => (
-//   $.ajax({
-//     url: `api/songs/${songId}/comments`,
-//     method: "GET"
-//   })
-// );
-
-export const createComment = (comment) => {
+export const getComments = (songId) => {
   return $.ajax({
-    url: `api/comments`,
+    url: `api/songs/${songId}/comments`,
+    method: "GET"
+  });
+};
+
+export const createComment = (comment, songId) => {
+  return $.ajax({
+    url: `api/songs/${songId}/comments`,
     method: "POST",
-    data: comment
+    data: {comment}
   });
 };
 

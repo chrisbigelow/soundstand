@@ -5,8 +5,6 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      user_id: this.props.currentUser.id,
-      song_id: this.props.songId,
       username: this.props.currentUser.username
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,9 +19,8 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const commentParams = this.state;
-    console.log(this.props);
-    this.props.createComment({comment: commentParams});
-
+    this.props.createComment(commentParams, this.props.songId)
+    .then(() => this.setState({body: "", username: this.props.currentUser.username}));
   }
 
 

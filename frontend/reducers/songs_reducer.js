@@ -5,10 +5,10 @@ const songReducer = (state = { }, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SONGS:
-      return merge({}, state, action.songs);
+      return merge({}, action.songs);
     case RECEIVE_SONG:
     const song = action.payload;
-    return merge({}, state, {[song.id]: song});
+    return merge({}, {[song.id]: song});
     case REMOVE_SONG:
       let newState = merge({}, state);
       delete newState[`${action.songId.id}`];

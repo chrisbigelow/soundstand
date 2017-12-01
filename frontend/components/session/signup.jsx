@@ -24,7 +24,6 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const userParams = this.state;
-    console.log(this.props);
     this.props.signup({user: userParams}).then(() => this.props.props.history.push('/songs'));
 
   }

@@ -15,10 +15,12 @@ export const receiveSong = payload => ({
   payload
 });
 
-export const receiveFormErrors = errors => ({
+export const receiveFormErrors = errors => {
+  return{
   type: RECEIVE_FORM_ERRORS,
   errors
-});
+  };
+};
 
 export const removeSong = (id) => ({
   type: REMOVE_SONG,

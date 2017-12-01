@@ -1,3 +1,5 @@
+
+
 class Api::SongsController < ApplicationController
 
   # before_action :require_login
@@ -33,6 +35,7 @@ class Api::SongsController < ApplicationController
   end
 
   def index
+    # debugger
     if params[:user_id]
       @songs = Song.where(user_id: params[:user_id])
     else

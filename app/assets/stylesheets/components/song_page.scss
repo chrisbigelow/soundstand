@@ -1,8 +1,13 @@
 .song-image-profile {
-  display: flex; 
   width: 200px;
   height: 200px;
+  display: flex; 
+  object-fit: cover;
 }
+
+// .song-image-profile-container {
+  
+// }
 
 .button-page-box {
   width: 100%;

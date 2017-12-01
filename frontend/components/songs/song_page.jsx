@@ -100,8 +100,8 @@ class SongPage extends React.Component {
             <p className="description-text"> {song.description}</p>
           </div>
           <ul className= "comments-list-and-form">
-            <li><CommentFormContainer songId={song.id}/></li>
-            <li><CommentIndexContainer songId={song.id} /></li>
+            <li><CommentFormContainer songId={this.props.match.params.songId}/></li>
+            <li><CommentIndexContainer songId={this.props.match.params.songId} /></li>
           </ul>
         </section>
         

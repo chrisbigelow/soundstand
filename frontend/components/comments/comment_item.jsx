@@ -7,11 +7,7 @@ class CommentItem extends React.Component {
 
   handleDelete(event) {
     event.preventDefault();
-    if (this.props.currentUser.username === this.props.comment.username ) {
-      this.props.deleteComment(this.props.comment.id);
-    } else {
-      alert("You cannot delete comment that isn't yours!");
-    }
+    this.props.deleteComment(this.props.comment.id);
   }
 
   render() {

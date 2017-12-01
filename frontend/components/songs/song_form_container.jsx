@@ -6,7 +6,7 @@ import { startLoad } from '../../actions/loading_actions';
 
 const mapStateToProps = state => {
   return{
-    // errors: state.errors,
+    errors: state.errors.songForm,
     loading: state.errors.loading.formLoading
   };
 };

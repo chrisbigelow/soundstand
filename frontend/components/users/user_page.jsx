@@ -24,7 +24,7 @@ class userPage extends React.Component {
     if (!user) return null;
 
     let editUser = (this.props.currentUser.username === user.username) ? 
-    (<Link to={`/users/${user.username}/edit`}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></Link>)
+    (<Link to={`/users/${user.username}/edit`}><i className="fa fa-pencil-square-o user-edit-icon" aria-hidden="true"></i></Link>)
     :
     (<div></div>);
 

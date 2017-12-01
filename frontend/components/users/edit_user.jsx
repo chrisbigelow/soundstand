@@ -30,7 +30,7 @@ class EditUser extends React.Component {
     formData.append("user[name]", this.state.name);
     formData.append("user[location]", this.state.location);
     formData.append("user[profile_image]", this.state.profileFile);
-    this.props.updateUser(formData).then((data) => this.props.history.push('/songs'));
+    this.props.updateUser(formData).then((data) => this.props.history.push(`/users/${this.props.match.params.username}`));
   }
 
 
@@ -80,13 +80,13 @@ class EditUser extends React.Component {
               placeholder={user.name}
               onChange={this.update('name')}
             /></li>
+            <li><label>Location:</label></li>
             <li><input
               className="session-inputs"  
               type="text"
               placeholder={user.location}
               onChange={this.update('location')}
             /></li>
-            <li><label>Location:</label></li>
             <li><label>User Image:</label></li>
             <li><input
             type="file"

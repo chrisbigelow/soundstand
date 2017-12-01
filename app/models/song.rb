@@ -1,13 +1,12 @@
 class Song < ApplicationRecord
 
   validates :title, :user_id, presence: true
-  validates_attachment :song_image,
-    content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
-    size: { less_than: 5.megabytes }
-  validates_attachment :song, presence: true,
-    # attachment audio type
-    content_type: { content_type: ['audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio'] }, 
-    size: { less_than: 100.megabytes } 
+  validates :song_image,
+    attachment_content_type: { content_type: /\Aimage\/.*\Z/ },
+    attachment_size: { less_than: 5.megabytes }
+  validates :song, presence: true,
+    attachment_content_type: { content_type: /.*/ }, 
+    attachment_size: { less_than: 100.megabytes } 
 
   belongs_to :user,
     primary_key: :id,

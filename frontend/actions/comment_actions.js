@@ -17,7 +17,7 @@ export const receiveComment = comment => ({
 
 export const removeComment = commentId => ({
   type: REMOVE_COMMENT,
-  commentId
+  id: commentId.id
 });
 
 export const receiveCommentErrors = errors => {

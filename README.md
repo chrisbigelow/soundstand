@@ -58,6 +58,8 @@ const loadingReducer = (state = initialState, action) => {
 
 [![https://gyazo.com/460087510fb022f5ed3a296ea510d42d](https://i.gyazo.com/460087510fb022f5ed3a296ea510d42d.gif)](https://gyazo.com/460087510fb022f5ed3a296ea510d42d)
 
+
 ### Future Directions
 
 - add full waveform Functionality
+- add song sharing and lists
